@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de exercícios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Lista de exercícios-Gabriela Pereira do Prado</h1>
+    </header>
+    
+    <section>
+        <h1>Exercício 01-Calcule aumento do seu salário</h1>
+
+        <label for="salario">Digite o salário:</label>
+        <input type="text" id="salario" placeholder="Digite aqui...">
+
+        <label for="aumento">Digite o aumento (em porcentagem):</label>
+        <input type="text" id="aumento" placeholder="Digite aqui...">
+
+        <input type="button" value="Calcular" onclick="Calcule1()">
+
+        <h2 id="salario_novo"></h2>
+    
+        <script>
+
+        function Calcule1(){
+
+        let salario = Number(document.getElementById("salario").value);
+        let aumento = Number(document.getElementById("aumento").value);
+        let resultado = (salario * aumento) / 100 + salario;
+        document.getElementById("salario_novo").innerText = 
+        "O salário novo é equivalente a " + resultado;
+
+}
+        </script>
+    
+    </section>
+    
+    <section>
+        <h1>Exercício 02-Calcule a Área de um Triângulo</h1> <!--Lista de exercícios, exercício 2 para o cálculo da área de um triangulo-->
+        <label for="altura">Digite a altura do triângulo em metros lineares:</label>
+        <input type="text" name="altura" id="altura" placeholder="Digite aqui..."><br>
+        <label for="base">Digite o comprimento da base do triângulo em metros lineares:</label>
+        <input type="text" name="base" id="base" placeholder="Digite aqui..."><br>
+        <input type="button" value="Área" onclick="area()">
+        <br>
+        <h2 id="resultado_area"></h2>
+
+    
+        <script>
+            function area(){
+                let altura=Number(document.getElementById("altura").value);
+                let base =Number(document.getElementById("base").value);
+                let area=(altura*base)/2
+                document.getElementById("resultado_area").innerText="A área desse triângulo é " + area+ " m²";
+            
+        }
+        </script>
+    </section>
+    
+    <section>
+        <h1>Exercício 03-Calcule a média ponderada</h1>
+        <label for="primeira_nota">Digite sua primeira nota:</label>
+        <input type="text" id="primeira_nota" placeholder="Digite aqui...">
+        <label for="segunda_nota">Digite sua segunda nota:</label>
+        <input type="text" id="segunda_nota" placeholder="Digite aqui...">
+        <input type="button" value="Calcular" onclick="Calcule3()">
+        <h2 id="media"></h2>
+        <br>
+        
+        <script>
+            function Calcule3(){
+                let nota_1=Number(document.getElementById("primeira_nota").value)
+                let nota_2=Number(document.getElementById("segunda_nota").value)
+                let media= ((nota_1*3)+(nota_2*7))/10
+                document.getElementById("media").innerText="O resultado da média é: "+media
+
+
+            }
+        </script>
+    </section>
+
+    <section>
+        <h1>Exercício 04-Calcule quantos anos, meses, semanas, dias, horas, minutos você tem.</h1>
+        <label for="ano_de_nascimento">Digite o seu ano de nascimento:</label>
+        <input type="text" name="ano_de_nascimento" id="ano_de_nascimento" placeholder="Digite aqui...">
+        <input type="button" value="Calcular" onclick="Calcule4()">
+        <h2 id="resultado"></h2>
+
+        <script>
+            function Calcule4(){
+                let ano_de_nascimento=Number(document.getElementById("ano_de_nascimento").value);
+                var ano_atual=new Date().getFullYear();
+                var anos= ano_atual- ano_de_nascimento;
+                var meses= anos*12;
+                var semanas= meses*4;
+                var dias= anos*365;
+                var horas= dias*24;
+                var minutos= horas*60;
+                document.getElementById("resultado").innerText="Você tem: "+"\n"+anos + " anos"
+                +"\n"+meses + " meses" +"\n" +semanas + " semanas" +"\n"+dias + " dias"+"\n"+horas + " horas" +"\n"+minutos + " minutos";
+                
+            }
+            
+        </script>
+    </section>
+
+    <section>
+        <h1>Exercício 05-Consumo médio de gasolina</h1>
+        <label for="distancia">Digite a distância a ser percorrida:</label>
+        <input type="text" id="distancia"  placeholder="Digite aqui...">
+        <label for="volume">Digite o volume do tanque:</label>
+        <input type="text" id="volume" placeholder="Digite aqui...">
+        <input type="button" value="Calcular" onclick="Calcule5()">
+        <br>
+        <h2 id="consumo_medio"></h2>
+
+        <script>
+            function Calcule5(){
+            
+                let distancia=Number(document.getElementById("distancia").value);
+                let volume=Number(document.getElementById("volume").value);
+                let consumo_medio=distancia/volume;
+                document.getElementById("consumo_medio").innerText="O consumo médio é "+ consumo_medio + "KM/L";
+
+            }
+        </script>
+    </section>
+
+
+    <section>
+        <h1>Exercício 06-Sistema de pagamento da empresa</h1>
+
+        <label for="hora_trabalhada">Digite o valor da hora trabalhada:</label>
+        <input type="text" id="hora_trabalhada" placeholder="Digite aqui..."><br>
+
+        <label for="num_de_refeicoes">Digite o número de refeições</label>
+        <input type="text" id="num_de_refeicoes" placeholder="Digite aqui..."><br>
+
+        <label for="num_horatrabalhada">Digite o número de horas trabalhadas</label>
+        <input type="text" id="num_horatrabalhada" placeholder="Digite aqui..."><br>
+
+        <input type="button" value="Calcule" onclick="Calcule6()">
+
+        <h2 id="salario_2"></h2>
+
+        <script>
+
+        function Calcule6(){
+
+            let hora_trabalhada = Number(document.getElementById("hora_trabalhada").value);
+            let num_de_refeicoes = Number(document.getElementById("num_de_refeicoes").value);
+            let num_horatrabalhada = Number(document.getElementById("num_horatrabalhada").value);
+
+            let saldo_dehoras_trabalhadas = num_horatrabalhada - 40; //calcula a quantidade trabalhada a mais que 40 horas normais
+
+            let valorbruto_horas = saldo_dehoras_trabalhadas * 3 * hora_trabalhada; // descobre o valor das horas adicionais
+
+            let desconto = num_de_refeicoes * 1.5; //calcula qual valor será retirado do valor de salário
+
+            let salario_total = (40 * hora_trabalhada + valorbruto_horas) - desconto;
+
+            document.getElementById("salario_2").innerText =
+            "O pagamento diante das horas trabalhadas será: " + salario_total;
+
+        }
+
+        </script>
+    </section>
+
+    <section>
+        <h1>Exercício 07-Gere um número aleatório e verifique se é par ou ímpar</h1>
+        <input type="button" value="Gerar número" onclick="gerarnumero()">
+        <h2 id="numero"></h2>
+        <h2 id="verificacao"></h2>
+
+
+        <script>
+            function gerarnumero(){
+                let numero = Math.floor(Math.random()*100)+1;
+                if (numero % 2==0){
+                    document.getElementById("numero").innerText="O número gerado foi: "+ numero +"\n";
+                    document.getElementById("verificacao").innerText="PAR";
+                } else {
+                    document.getElementById("numero").innerText="O número gerado foi: "+ numero +"\n";
+                    document.getElementById("verificacao").innerText="ÍMPAR";
+                }
+                    
+            }
+        
+        </script>
+    </section>
+
+
+</body>
+</html>
