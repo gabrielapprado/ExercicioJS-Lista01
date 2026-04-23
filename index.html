@@ -23,19 +23,19 @@
 
         <input type="button" value="Calcular" onclick="Calcule1()">
 
-        <h2 id="salario_novo"></h2>
+        <p id="salario_novo"></p> 
     
         <script>
 
-        function Calcule1(){
+            function Calcule1(){
 
-        let salario = Number(document.getElementById("salario").value);
-        let aumento = Number(document.getElementById("aumento").value);
-        let resultado = (salario * aumento) / 100 + salario;
-        document.getElementById("salario_novo").innerText = 
-        "O salário novo é equivalente a " + resultado;
+                let salario = Number(document.getElementById("salario").value);
+                let aumento = Number(document.getElementById("aumento").value);
+                let resultado = (salario * aumento) / 100 + salario;
+                document.getElementById("salario_novo").innerText = 
+                "O salário novo é equivalente a " + resultado;
 
-}
+            }
         </script>
     
     </section>
@@ -48,7 +48,7 @@
         <input type="text" name="base" id="base" placeholder="Digite aqui..."><br>
         <input type="button" value="Área" onclick="area()">
         <br>
-        <h2 id="resultado_area"></h2>
+        <input type="text" id="resultado_area" readonly>
 
     
         <script>
@@ -56,7 +56,7 @@
                 let altura=Number(document.getElementById("altura").value);
                 let base =Number(document.getElementById("base").value);
                 let area=(altura*base)/2
-                document.getElementById("resultado_area").innerText="A área desse triângulo é " + area+ " m²";
+                document.getElementById("resultado_area").value= area + " M²";
             
         }
         </script>
@@ -68,8 +68,8 @@
         <input type="text" id="primeira_nota" placeholder="Digite aqui...">
         <label for="segunda_nota">Digite sua segunda nota:</label>
         <input type="text" id="segunda_nota" placeholder="Digite aqui...">
-        <input type="button" value="Calcular" onclick="Calcule3()">
-        <h2 id="media"></h2>
+        <input type="button" value="Calcular" onclick="Calcule3()"><br>
+        <label id="media"></label>
         <br>
         
         <script>
@@ -89,7 +89,10 @@
         <label for="ano_de_nascimento">Digite o seu ano de nascimento:</label>
         <input type="text" name="ano_de_nascimento" id="ano_de_nascimento" placeholder="Digite aqui...">
         <input type="button" value="Calcular" onclick="Calcule4()">
+        <h2>Os resultados estão na página e no console.</h2>
         <h2 id="resultado"></h2>
+        <h2 id="idade2050"></h2>
+        
 
         <script>
             function Calcule4(){
@@ -103,6 +106,9 @@
                 var minutos= horas*60;
                 document.getElementById("resultado").innerText="Você tem: "+"\n"+anos + " anos"
                 +"\n"+meses + " meses" +"\n" +semanas + " semanas" +"\n"+dias + " dias"+"\n"+horas + " horas" +"\n"+minutos + " minutos";
+                let idade2050= 2050-ano_de_nascimento;
+                document.getElementById("idade2050").innerText="Em 2050 você terá " + idade2050 + " anos";
+                console.log(`Anos: ${anos}, Meses: ${meses}, Semanas: ${semanas}, Dias: ${dias}, Horas: ${horas}, Minutos: ${minutos}. E em 2050 você terá: ${idade2050} anos. `)
                 
             }
             
@@ -111,9 +117,9 @@
 
     <section>
         <h1>Exercício 05-Consumo médio de gasolina</h1>
-        <label for="distancia">Digite a distância a ser percorrida:</label>
+        <label for="distancia">Digite a distância a ser percorrida em KM:</label>
         <input type="text" id="distancia"  placeholder="Digite aqui...">
-        <label for="volume">Digite o volume do tanque:</label>
+        <label for="volume">Digite o volume do tanque em L:</label>
         <input type="text" id="volume" placeholder="Digite aqui...">
         <input type="button" value="Calcular" onclick="Calcule5()">
         <br>
@@ -157,15 +163,13 @@
             let num_horatrabalhada = Number(document.getElementById("num_horatrabalhada").value);
 
             let saldo_dehoras_trabalhadas = num_horatrabalhada - 40; //calcula a quantidade trabalhada a mais que 40 horas normais
-
             let valorbruto_horas = saldo_dehoras_trabalhadas * 3 * hora_trabalhada; // descobre o valor das horas adicionais
-
             let desconto = num_de_refeicoes * 1.5; //calcula qual valor será retirado do valor de salário
 
             let salario_total = (40 * hora_trabalhada + valorbruto_horas) - desconto;
 
             document.getElementById("salario_2").innerText =
-            "O pagamento diante das horas trabalhadas será: " + salario_total;
+            "O pagamento diante das horas trabalhadas será: " + salario_total; + " reais"
 
         }
 

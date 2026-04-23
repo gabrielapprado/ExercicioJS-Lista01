@@ -43,6 +43,6 @@ input[type="text"] {
   border: black 1px solid;
   margin: 10px 10px 10px 10px;
 }
-h1, h2{
+h1, h2, p{
     margin-left: 10px;
 }
