@@ -33,7 +33,7 @@
                 let aumento = Number(document.getElementById("aumento").value);
                 let resultado = (salario * aumento) / 100 + salario;
                 document.getElementById("salario_novo").innerText = 
-                "O salário novo é equivalente a " + resultado;
+                "O salário novo é equivalente a " + resultado.toFixed(2);
 
             }
         </script>
@@ -56,7 +56,7 @@
                 let altura=Number(document.getElementById("altura").value);
                 let base =Number(document.getElementById("base").value);
                 let area=(altura*base)/2
-                document.getElementById("resultado_area").value= area + " M²";
+                document.getElementById("resultado_area").value= area.toFixed(2) + " M²";
             
         }
         </script>
@@ -77,7 +77,7 @@
                 let nota_1=Number(document.getElementById("primeira_nota").value)
                 let nota_2=Number(document.getElementById("segunda_nota").value)
                 let media= ((nota_1*3)+(nota_2*7))/10
-                document.getElementById("media").innerText="O resultado da média é: "+media
+                document.getElementById("media").innerText="O resultado da média é: "+media.toFixed(2);
 
 
             }
@@ -131,7 +131,7 @@
                 let distancia=Number(document.getElementById("distancia").value);
                 let volume=Number(document.getElementById("volume").value);
                 let consumo_medio=distancia/volume;
-                document.getElementById("consumo_medio").innerText="O consumo médio é "+ consumo_medio + "KM/L";
+                document.getElementById("consumo_medio").innerText="O consumo médio é "+ consumo_medio.toFixed(2) + "KM/L";
 
             }
         </script>
@@ -169,7 +169,7 @@
             let salario_total = (40 * hora_trabalhada + valorbruto_horas) - desconto;
 
             document.getElementById("salario_2").innerText =
-            "O pagamento diante das horas trabalhadas será: " + salario_total; + " reais"
+            "O pagamento diante das horas trabalhadas será: " + salario_total.toFixed(2) + " reais"
 
         }
 
